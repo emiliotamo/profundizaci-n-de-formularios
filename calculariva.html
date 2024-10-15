@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <script>
+        // Función para calcular el precio con IVA
+        function calcularPrecioConIVA(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            // Obtener el valor del precio
+            const precio = parseFloat(document.getElementById("precio").value);
+            
+            // Comprobar si el valor es un número válido
+            if (isNaN(precio) || precio <= 0) {
+                alert("Por favor, introduce un precio válido.");
+                return;
+            }
+
+            // Obtener el tipo de IVA seleccionado
+            const ivaSeleccionado = document.getElementById("iva").value;
+            const iva = parseFloat(ivaSeleccionado);
+
+            // Calcular el precio final con IVA
+            const precioConIVA = precio + (precio * (iva / 100));
+
+            // Rellenar el campo de resultado con el precio calculado
+            document.getElementById("resultado").value = precioConIVA.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcular Precio con IVA</h1>
+
+    <form id="formCalculo" onsubmit="calcularPrecioConIVA(event)">
+        <!-- Campo para el precio (sólo números con hasta dos decimales) -->
+        <label for="precio">Precio:</label>
+        <input type="number" id="precio" name="precio" step="0.01" required>
+        <br><br>
+
+        
+        <label for="iva">Tipo de IVA:</label>
+        <select id="iva" name="iva" required>
+            <option value="10">Reducido (10%)</option>
+            <option value="21">Normal (21%)</option>
+        </select>
+        <br><br>
+
+        <!-- Campo no editable para el resultado -->
+        <label for="resultado">Precio con IVA:</label>
+        <input type="text" id="resultado" name="resultado" readonly>
+        <br><br>
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>

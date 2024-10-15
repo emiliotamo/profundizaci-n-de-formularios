@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>Reserva de Pistas - Club de Deportes</h1>
+
+    <form action="procesar_reserva.php" method="post">
+
+        <!-- Datos personales -->
+        <fieldset>
+            <legend>Datos Personales</legend>
+
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" pattern="[A-Z][a-z]+" required>
+            <br><br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" pattern="[A-Z][a-z]+" required>
+            <br><br>
+
+            <label for="miembro">¿Es miembro del club?</label>
+            <select id="miembro">
+                <option value="si" selected>Sí</option>
+                <option value="no">No</option>
+            </select>
+            <br><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+        </fieldset>
+
+        <br>
+
+        <!-- Datos de la reserva -->
+        <fieldset>
+            <legend>Datos del Deporte</legend>
+
+            <label for="deporte">Deporte:</label>
+            <select id="deporte" required>
+                <option value="paddle">Paddle</option>
+                <option value="squash">Squash</option>
+                <option value="tenis">Tenis</option>
+            </select>
+            <br><br>
+
+            <label for="fecha">Fecha de la reserva:</label>
+            <input type="date" id="fecha" required>
+            <br><br>
+
+            <label for="hora">Hora de la reserva:</label>
+            <input type="time" id="hora" required>
+            <br><br>
+
+            <input type="checkbox" id="acepto" required>
+            <label for="acepto">Acepto las normas del club</label>
+        </fieldset>
+
+        <br><br>
+
+        <!-- Botón de envío centrado -->
+        <div style="text-align: center;">
+            <button type="submit">Reservar</button>
+        </div>
+
+    </form>
+</body>
+</html>

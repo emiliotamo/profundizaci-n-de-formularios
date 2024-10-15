@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>Envía tu foto de receta</h1>
+
+    <form action="procesar_receta.php" method="post" enctype="multipart/form-data">
+        <!-- Nombre de la receta -->
+        <label for="receta">Receta:</label>
+        <input type="text" id="receta" name="receta" maxlength="80" required>
+        <br><br>
+
+        <!-- Tipo de receta -->
+        <label for="tipo">Tipo de receta:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="carne">Carne</option>
+            <option value="pescado">Pescado</option>
+            <option value="fruta">Fruta</option>
+        </select>
+        <br><br>
+
+        <!-- Imagen de la receta -->
+        <label for="imagen">Seleccionar Imagen:</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        <br><br>
+
+        <!-- Botón de envío -->
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

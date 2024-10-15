@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>Mensaje al profesor</h1>
+
+    <form action="procesar_mensaje.php" method="post">
+
+        <!-- Nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+
+        <!-- Turno -->
+        <label for="turno">Turno:</label>
+        <select id="turno" name="turno" required>
+            <option value="mañana">Mañana</option>
+            <option value="tarde">Tarde</option>
+        </select>
+        <br><br>
+
+        <!-- Materias -->
+        <label for="materias">Materias:</label>
+        <select id="materias" name="materias" required>
+            <option value="fisica">Física</option>
+            <option value="quimica">Química</option>
+            <option value="biologia">Biología</option>
+            <option value="matematicas">Matemáticas</option>
+        </select>
+        <br><br>
+
+        <!-- Mensaje de texto -->
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" cols="30" rows="4" required></textarea>
+        <br><br>
+
+        <!-- Campo oculto -->
+        <input type="hidden" name="origen" value="Academia">
+
+        <!-- Botón de envío -->
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+</html>

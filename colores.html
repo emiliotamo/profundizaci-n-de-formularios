@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+
+    <script>
+        // Función para generar un color aleatorio y verificar la respuesta
+        function verificarColor(event) {
+            event.preventDefault();
+
+            // Array de colores
+            const colores = ["azul", "verde", "rojo", "naranja", "rosa", "marrón"];
+            
+            // Generar un número aleatorio entre 0 y 5
+            const colorPensado = Math.floor(Math.random() * 6);
+            
+            // Obtener el color seleccionado por el usuario
+            const colorSeleccionado = document.getElementById("color").value;
+
+            // Verificar si el color seleccionado coincide con el pensado por el ordenador
+            if (colorSeleccionado === colores[colorPensado]) {
+                alert("¡Correcto! Has adivinado el color.");
+                // Enviar el formulario ya que el color es correcto
+                document.getElementById("juegoColor").submit();
+            } else {
+                alert("Incorrecto. El color era " + colores[colorPensado] + ". Inténtalo de nuevo.");
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Adivina el Color</h1>
+
+    <form id="juegoColor" action="procesar.php" method="get" onsubmit="verificarColor(event)">
+        <!-- Lista de colores seleccionable -->
+        <label for="color">Selecciona un color:</label>
+        <select id="color" name="color" required>
+            <option value="azul">Azul</option>
+            <option value="verde">Verde</option>
+            <option value="rojo">Rojo</option>
+            <option value="naranja">Naranja</option>
+            <option value="rosa">Rosa</option>
+            <option value="marrón">Marrón</option>
+        </select>
+        <br><br>
+
+        <!-- Botón de envío -->
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
